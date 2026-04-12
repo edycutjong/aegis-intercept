@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#0f172a"/>
+  <!-- Outer glow ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#glowGrad)" stroke-width="2" opacity="0.3"/>
+  <!-- Shield body -->
+  <path d="M256 80 L400 160 L400 300 Q400 420 256 460 Q112 420 112 300 L112 160 Z"
+        fill="none" stroke="url(#shieldGrad)" stroke-width="6" stroke-linejoin="round" filter="url(#glow)"/>
+  <!-- Inner shield highlight -->
+  <path d="M256 110 L375 178 L375 295 Q375 395 256 430 Q137 395 137 295 L137 178 Z"
+        fill="url(#shieldGrad)" fill-opacity="0.08" stroke="url(#shieldGrad)" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- Crosshair horizontal -->
+  <line x1="190" y1="270" x2="322" y2="270" stroke="#06b6d4" stroke-width="2" opacity="0.6"/>
+  <!-- Crosshair vertical -->
+  <line x1="256" y1="204" x2="256" y2="336" stroke="#06b6d4" stroke-width="2" opacity="0.6"/>
+  <!-- Center threat dot -->
+  <circle cx="256" cy="270" r="12" fill="#ef4444" opacity="0.9"/>
+  <circle cx="256" cy="270" r="20" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="256" cy="270" r="28" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.2"/>
+  <!-- Corner brackets - top left -->
+  <path d="M168 180 L168 160 L188 160" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.5"/>
+  <!-- Corner brackets - top right -->
+  <path d="M344 180 L344 160 L324 160" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.5"/>
+  <!-- Corner brackets - bottom left -->
+  <path d="M168 360 L168 380 L188 380" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.5"/>
+  <!-- Corner brackets - bottom right -->
+  <path d="M344 360 L344 380 L324 380" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.5"/>
+</svg>
