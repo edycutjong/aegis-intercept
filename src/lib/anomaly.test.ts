@@ -26,6 +26,12 @@ describe('anomaly logic', () => {
     it('calculates standard average', () => {
       expect(calculateAverageLatency(mockBenchmarks, 'standard')).toBe(150);
     });
+
+    it('falls back to 0 for missing latency values', () => {
+      const missingData = [{ timestamp: '3', chain_id: '1' } as Benchmark];
+      expect(calculateAverageLatency(missingData, 'liquify')).toBe(0);
+      expect(calculateAverageLatency(missingData, 'standard')).toBe(0);
+    });
   });
 
   describe('isLatencySpike', () => {
@@ -39,6 +45,12 @@ describe('anomaly logic', () => {
       expect(isLatencySpike({
          timestamp: '1', chain_id: '1', liquify_latency_ms: 10, standard_latency_ms: 100, difference_ms: 0, speed_factor: 0 
       })).toBe(false);
+    });
+
+    it('returns false for missing latency values', () => {
+      expect(isLatencySpike({
+         timestamp: '1', chain_id: '1'
+      } as Benchmark)).toBe(false);
     });
   });
 
@@ -82,6 +94,10 @@ describe('anomaly logic', () => {
 
     it('calculates total value of unresolved alerts', () => {
       expect(calculateValueAtRisk(alerts as Alert[])).toBe(3000);
+    });
+
+    it('falls back to 0 when value_usd is 0', () => {
+      expect(calculateValueAtRisk([{ status: 'UNRESOLVED', value_usd: 0 } as Alert])).toBe(0);
     });
   });
 

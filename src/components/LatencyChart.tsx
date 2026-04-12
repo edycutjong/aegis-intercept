@@ -21,12 +21,12 @@ interface TooltipPayloadEntry {
   payload: { timestamp: string };
 }
 
-interface CustomTooltipProps {
+export interface CustomTooltipProps {
   active?: boolean;
   payload?: TooltipPayloadEntry[];
 }
 
-function CustomTooltip({ active, payload }: CustomTooltipProps) {
+export function CustomTooltip({ active, payload }: CustomTooltipProps) {
   if (active && payload && payload.length) {
     return (
       <div className="bg-slate-900 border border-slate-700/50 p-3 rounded-lg shadow-xl backdrop-blur-sm relative z-50">

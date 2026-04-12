@@ -51,4 +51,17 @@ describe('ThreatResponsePanel', () => {
     fireEvent.click(migrateButton);
     expect(handleMigrate).toHaveBeenCalledWith('123');
   });
+
+  it('handles missing value_usd and liquify_advantage_ms with fallbacks', () => {
+    const incompleteAlert: Alert = {
+      ...mockAlert,
+      value_usd: undefined,
+      liquify_advantage_ms: undefined,
+    };
+    render(<ThreatResponsePanel criticalAlert={incompleteAlert} onPause={jest.fn()} onMigrate={jest.fn()} />);
+    
+    // Check fallbacks are applied: formatUsd(0) and formatLatency(300)
+    expect(screen.getByText('$0')).toBeInTheDocument();
+    expect(screen.getByText('300ms')).toBeInTheDocument();
+  });
 });

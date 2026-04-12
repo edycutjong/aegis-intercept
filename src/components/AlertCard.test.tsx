@@ -37,4 +37,46 @@ describe('AlertCard', () => {
     expect(screen.getByText('CRITICAL')).toBeInTheDocument();
     expect(screen.getByText('Liquidity Drain')).toBeInTheDocument();
   });
+
+  it('renders HIGH severity alerts', () => {
+    render(<AlertCard alert={{ ...sampleAlert, severity: 'HIGH' }} />);
+    expect(screen.getByText('HIGH')).toBeInTheDocument();
+  });
+
+  it('handles unknown alert types and missing hashes', () => {
+    const incompleteAlert: Alert = {
+      id: 'a2',
+      severity: 'LOW',
+      status: 'UNRESOLVED',
+      timestamp: new Date().toISOString(),
+      description: 'Test',
+      // missing type/alertType, value_usd, target_contract, txHash/tx_hash
+    };
+    render(<AlertCard alert={incompleteAlert} />);
+    expect(screen.getByText('unknown')).toBeInTheDocument();
+    // Empty hash simply returns ''
+  });
+
+  it('renders correctly for resolved alerts', () => {
+    const { container } = render(<AlertCard alert={{ ...sampleAlert, status: 'MITIGATED' }} />);
+    // Check for opacity/class change
+    expect(screen.getByText('Whale Alert')).toBeInTheDocument();
+    expect(container.firstChild).toHaveClass('opacity-60');
+  });
+
+  it('renders medium severity', () => {
+    render(<AlertCard alert={{...sampleAlert, severity: 'MEDIUM'}} />);
+    expect(screen.getByText('MEDIUM')).toBeInTheDocument();
+  });
+
+  it('renders low severity', () => {
+    render(<AlertCard alert={{...sampleAlert, severity: 'LOW'}} />);
+    expect(screen.getByText('LOW')).toBeInTheDocument();
+  });
+
+  it('renders unknown severity fallback', () => {
+    // Cast to any to bypass type checking for testing the default switch case
+    render(<AlertCard alert={{...sampleAlert, severity: 'UNKNOWN' as any}} />);
+    expect(screen.getByText('UNKNOWN')).toBeInTheDocument();
+  });
 });
