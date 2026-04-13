@@ -12,7 +12,10 @@ jest.mock('recharts', () => {
     AreaChart: ({ children }: { children: React.ReactNode }) => <div data-testid="area-chart">{children}</div>,
     Area: () => <div data-testid="area" />,
     XAxis: () => <div data-testid="xaxis" />,
-    YAxis: () => <div data-testid="yaxis" />,
+    YAxis: (props: any) => {
+      if (props.tickFormatter) props.tickFormatter(100);
+      return <div data-testid="yaxis" />;
+    },
     CartesianGrid: () => <div data-testid="cartesian-grid" />,
     Tooltip: () => <div data-testid="tooltip" />,
     ReferenceLine: () => <div data-testid="reference-line" />,
@@ -52,6 +55,16 @@ describe('LatencyChart', () => {
     
     const container = screen.getByTestId('responsive-container').parentElement;
     expect(container).toHaveStyle('height: 500px');
+  });
+
+  it('uses string height', () => {
+    render(<LatencyChart data={mockData} height="100%" />);
+    act(() => {
+      jest.advanceTimersByTime(50);
+    });
+    
+    const container = screen.getByTestId('responsive-container').parentElement;
+    expect(container).toHaveStyle('height: 100%');
   });
 
   describe('CustomTooltip', () => {
