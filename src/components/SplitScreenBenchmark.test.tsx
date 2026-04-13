@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { SplitScreenBenchmark } from './SplitScreenBenchmark';
 import { Benchmark } from '@/lib/types';
-import * as anomalyLib from '@/lib/anomaly';
 
 // Mock the LatencyChart as it uses Recharts which can be tricky in JSDOM
 jest.mock('./LatencyChart', () => ({

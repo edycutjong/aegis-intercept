@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     currentAlerts = [newAlert, ...currentAlerts].slice(0, 20); // Keep max 20
     
     return NextResponse.json(newAlert, { status: 201 });
-  } catch (_err) {
+  } catch {
     return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
   }
 }

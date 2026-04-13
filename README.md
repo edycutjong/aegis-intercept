@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/Next.js-16.2-black?logo=next.js" alt="Next.js" />
   <img src="https://img.shields.io/badge/React-19.2-61dafb?logo=react" alt="React" />
   <img src="https://img.shields.io/badge/Supabase-Realtime-3FCF8E?logo=supabase" alt="Supabase" />
-  <img src="https://img.shields.io/badge/Vitest-100%25%20Coverage-6E9F18?logo=vitest" alt="Vitest" />
+  <img src="https://img.shields.io/badge/Jest-100%25%20Coverage-C21325?logo=jest" alt="Jest" />
   <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript" alt="TypeScript" />
 </p>
 
@@ -36,7 +36,7 @@ Attackers exploit bridges in seconds. Standard RPCs take 5–30 seconds to index
 - **Split-Screen Latency Benchmark** — Live, real-time chart comparing standard RPC latency vs Liquify Indexer API latency. Not a static chart — continuous live proof
 - **Autonomous Response Controls** — Front-run pausing and capital migration controls for rapid incident response
 - **Exploit Replay Player** — Replay famous hacks (Wormhole, Ronin) and see how fast Aegis would have caught them
-- **100% Core Test Coverage** — Deterministic alert analysis logic fully covered with Vitest
+- **100% Core Test Coverage** — Deterministic alert analysis logic fully covered with Jest
 
 ---
 
@@ -78,7 +78,7 @@ Attackers exploit bridges in seconds. Standard RPCs take 5–30 seconds to index
 | Charts      | Recharts 3.8                         |
 | Blockchain  | viem 2.47 (EVM chain data)           |
 | Backend     | Supabase (Realtime push + storage)   |
-| Testing     | Vitest + Testing Library (100% cov)  |
+| Testing     | Jest + Testing Library (100% cov)    |
 | CI/CD       | GitHub Actions (lint + typecheck + test) |
 | Language    | TypeScript 5                         |
 
@@ -88,7 +88,7 @@ Attackers exploit bridges in seconds. Standard RPCs take 5–30 seconds to index
 
 ### Prerequisites
 
-- **Node.js** ≥ 22 (Required for Vitest setup and `styleText` compatibility)
+- **Node.js** ≥ 20.9.0
 - **npm** ≥ 10
 
 ### Installation
@@ -113,7 +113,7 @@ cp .env.example .env.local
 | `npm run build` | Compile for production (Vercel optimized) |
 | `npm run lint` | ESLint with Next.js 16 rules |
 | `npm run typecheck` | Full TypeScript validation |
-| `npm run test` | Unit tests (Vitest) |
+| `npm run test` | Unit tests (Jest) |
 | `npm run test:coverage` | Coverage report (target: 100%) |
 
 ---
@@ -137,7 +137,7 @@ aegis-intercept/
 │   └── lib/                  # Utility functions + detection rules
 ├── .github/
 │   └── workflows/ci.yml      # CI: lint + typecheck + 100% coverage
-├── vitest.config.ts
+├── jest.config.js
 ├── package.json
 ├── tsconfig.json
 └── next.config.ts

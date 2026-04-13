@@ -22,17 +22,17 @@ describe('ChainStatusIndicator', () => {
   });
 
   it('renders HEALTHY badge', () => {
-    render(<ChainStatusIndicator chain={{ ...mockChain, status: 'HEALTHY' as any }} />);
+    render(<ChainStatusIndicator chain={{ ...mockChain, status: 'HEALTHY' as unknown as Chain['status'] }} />);
     expect(screen.getByText('HEALTHY')).toBeInTheDocument();
   });
 
   it('renders DEGRADED badge', () => {
-    render(<ChainStatusIndicator chain={{ ...mockChain, status: 'DEGRADED' as any }} />);
+    render(<ChainStatusIndicator chain={{ ...mockChain, status: 'DEGRADED' as unknown as Chain['status'] }} />);
     expect(screen.getByText('DEGRADED')).toBeInTheDocument();
   });
 
   it('renders DOWN badge', () => {
-    render(<ChainStatusIndicator chain={{ ...mockChain, status: 'DOWN' as any }} />);
+    render(<ChainStatusIndicator chain={{ ...mockChain, status: 'DOWN' as unknown as Chain['status'] }} />);
     expect(screen.getByText('DOWN')).toBeInTheDocument();
   });
   

@@ -21,7 +21,7 @@ export async function POST() {
     });
     
     return NextResponse.json({ success: true, message: 'Simulation triggered' });
-  } catch (_error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to simulate attack' }, { status: 500 });
   }
 }

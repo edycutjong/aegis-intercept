@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen, act } from '@testing-library/react';
 import { LatencyChart, CustomTooltip } from './LatencyChart';
 import { Benchmark } from '@/lib/types';
@@ -7,8 +8,8 @@ jest.mock('recharts', () => {
   const OriginalModule = jest.requireActual('recharts');
   return {
     ...OriginalModule,
-    ResponsiveContainer: ({ children }: any) => <div data-testid="responsive-container">{children}</div>,
-    AreaChart: ({ children }: any) => <div data-testid="area-chart">{children}</div>,
+    ResponsiveContainer: ({ children }: { children: React.ReactNode }) => <div data-testid="responsive-container">{children}</div>,
+    AreaChart: ({ children }: { children: React.ReactNode }) => <div data-testid="area-chart">{children}</div>,
     Area: () => <div data-testid="area" />,
     XAxis: () => <div data-testid="xaxis" />,
     YAxis: () => <div data-testid="yaxis" />,

@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 import { GET, POST } from './route';
-import { NextResponse } from 'next/server';
+
 
 describe('/api/alerts route', () => {
   it('GET returns a list of alerts', async () => {

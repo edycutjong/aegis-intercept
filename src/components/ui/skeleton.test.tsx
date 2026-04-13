@@ -3,7 +3,7 @@ import { Skeleton } from './skeleton';
 
 describe('Skeleton', () => {
   it('renders with appropriate default classes', () => {
-    const { container } = render(<Skeleton data-testid="skel" />);
+    render(<Skeleton data-testid="skel" />);
     const div = screen.getByTestId('skel');
     // The core skeleton class
     expect(div).toHaveClass('animate-pulse', 'rounded-md', 'bg-slate-800');

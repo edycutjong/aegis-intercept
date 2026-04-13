@@ -27,7 +27,7 @@ export default function Dashboard() {
   const [isDemoActive, setIsDemoActive] = useState(true);
   
   // Data State — initialize directly with demo data (avoids setState-in-effect cascade)
-  const [chains, setChains] = useState<Chain[]>(() => generateMockChains());
+  const [chains] = useState<Chain[]>(() => generateMockChains());
   const [alerts, setAlerts] = useState<Alert[]>(() => generateMockAlerts(5));
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>(() => generateMockBenchmarkHistory(MAX_BENCHMARK_HISTORY));
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-require-imports */
 import '@testing-library/jest-dom';
 import { TextEncoder, TextDecoder } from 'util';
 import { ReadableStream, TransformStream, WritableStream } from 'node:stream/web';
@@ -23,7 +25,6 @@ if (!global.Request) {
 
 // 3. Component-specific mocks
 // Recharts ResponsiveContainer fix
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 (global as any).ResizeObserver = class ResizeObserver {
   observe() {}
   unobserve() {}

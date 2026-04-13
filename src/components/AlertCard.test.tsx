@@ -75,8 +75,8 @@ describe('AlertCard', () => {
   });
 
   it('renders unknown severity fallback', () => {
-    // Cast to any to bypass type checking for testing the default switch case
-    render(<AlertCard alert={{...sampleAlert, severity: 'UNKNOWN' as any}} />);
+    // Cast to bypass type checking for testing the default switch case
+    render(<AlertCard alert={{...sampleAlert, severity: 'UNKNOWN' as unknown as Alert['severity']}} />);
     expect(screen.getByText('UNKNOWN')).toBeInTheDocument();
   });
 });
