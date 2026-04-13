@@ -12,7 +12,7 @@ jest.mock('recharts', () => {
     AreaChart: ({ children }: { children: React.ReactNode }) => <div data-testid="area-chart">{children}</div>,
     Area: () => <div data-testid="area" />,
     XAxis: () => <div data-testid="xaxis" />,
-    YAxis: (props: any) => {
+    YAxis: (props: { tickFormatter?: (val: number) => void }) => {
       if (props.tickFormatter) props.tickFormatter(100);
       return <div data-testid="yaxis" />;
     },
