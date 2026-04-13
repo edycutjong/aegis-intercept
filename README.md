@@ -170,7 +170,7 @@ The split-screen benchmark isn't just a feature — it's **marketing collateral*
 
 ## 📹 Demo
 
-> 🎥 [Watch Demo Video](#) | 🌐 [Live Demo](#)
+> 🎥 [Watch Demo Video](#) | 🌐 [Live Demo](https://aegis-intercept.vercel.app)
 
 ---
 
