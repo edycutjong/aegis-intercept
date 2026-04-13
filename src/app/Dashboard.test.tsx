@@ -7,6 +7,16 @@ jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
 
+// Mock mock-data for coverage of false branch in page.tsx
+import { generateMockBenchmarkHistory } from '@/lib/mock-data';
+jest.mock('@/lib/mock-data', () => {
+  const original = jest.requireActual('@/lib/mock-data');
+  return {
+    ...original,
+    generateMockBenchmarkHistory: jest.fn(original.generateMockBenchmarkHistory)
+  };
+});
+
 // Mock fetch
 global.fetch = jest.fn();
 
@@ -99,5 +109,15 @@ describe('Dashboard (Main Page)', () => {
     
     // Should be back to Pause Demo
     expect(screen.getByText(/Pause Demo/i)).toBeInTheDocument();
+  });
+
+  it('covers benchmark length branch when elements < MAX_BENCHMARK_HISTORY', () => {
+    (generateMockBenchmarkHistory as jest.Mock).mockReturnValueOnce([]);
+    render(<Dashboard />);
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
+    // Triggers branch line 50 in page.tsx
+    expect(screen.getByText(/Aegis/)).toBeInTheDocument();
   });
 });
