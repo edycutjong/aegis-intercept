@@ -5,7 +5,7 @@
 
   [![Live Demo](https://img.shields.io/badge/🌐_Live-Demo-06b6d4?style=for-the-badge)](https://aegis-intercept.edycu.dev/)
   [![Pitch Video](https://img.shields.io/badge/🎥_Watch-Demo_Video-ef4444?style=for-the-badge)](https://youtu.be/Ue8tqh3x7yw)
-  [![DoraHacks](https://img.shields.io/badge/🏆_DoraHacks-BUIDL-7c3aed?style=for-the-badge)](https://dorahacks.io/buidl)
+  [![DoraHacks](https://img.shields.io/badge/🏆_DoraHacks-BUIDL-7c3aed?style=for-the-badge)](https://dorahacks.io/buidl/43143)
 
   <br />
 
