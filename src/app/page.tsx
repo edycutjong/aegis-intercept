@@ -40,7 +40,7 @@ const fadeInUp = {
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -122,13 +122,13 @@ export default function Dashboard() {
       <header className="sticky top-0 z-50 aegis-header-glass">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
           {/* Gradient line at bottom of header */}
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cyan-500/20 to-transparent" />
 
           <div className="flex items-center gap-3">
             {/* Logo with glow */}
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/30 relative">
+            <div className="w-9 h-9 rounded-lg bg-linear-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/30 relative">
               <ShieldAlert className="w-5 h-5 text-white" />
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 blur-md opacity-40" />
+              <div className="absolute inset-0 rounded-lg bg-linear-to-br from-blue-500 to-cyan-400 blur-md opacity-40" />
             </div>
             <h1 className="text-lg font-bold tracking-tight text-slate-100 flex items-baseline gap-2">
               Aegis <span className="text-slate-500 font-medium">Intercept</span>

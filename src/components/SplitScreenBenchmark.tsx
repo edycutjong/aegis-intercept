@@ -28,7 +28,7 @@ export function SplitScreenBenchmark({ benchmarks }: SplitScreenBenchmarkProps) 
     >
       <Card className="bg-slate-900/80 border-slate-800 overflow-hidden shadow-2xl relative aegis-glow-border">
         {/* Glossy top reflection */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-60" />
+        <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-cyan-500/50 to-transparent opacity-60" />
 
         <CardContent className="p-0">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800/60">
@@ -73,7 +73,7 @@ export function SplitScreenBenchmark({ benchmarks }: SplitScreenBenchmarkProps) 
             {/* Real-time Metrics Sidebar */}
             <div className="p-6 bg-slate-900/50 flex flex-col justify-center gap-8 relative overflow-hidden">
               {/* Soft backdrop glow for the metrics */}
-              <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-blue-500/5 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-b from-cyan-500/5 via-transparent to-blue-500/5 pointer-events-none" />
               
               {/* Subtle grid */}
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[length:20px_20px] pointer-events-none" />

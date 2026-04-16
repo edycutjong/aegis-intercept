@@ -55,7 +55,7 @@ export function AlertCard({ alert, index = 0 }: AlertCardProps) {
       transition={{
         delay: index * 0.08,
         duration: 0.4,
-        ease: [0.16, 1, 0.3, 1],
+        ease: "easeOut",
       }}
     >
       <Card
@@ -70,14 +70,14 @@ export function AlertCard({ alert, index = 0 }: AlertCardProps) {
       >
         {/* Decorative left accent edge — now with gradient */}
         <div className={`absolute left-0 top-0 bottom-0 w-1 ${
-          alert.severity === 'CRITICAL' ? 'bg-gradient-to-b from-red-500 via-red-400 to-red-600' :
-          alert.severity === 'HIGH' ? 'bg-gradient-to-b from-orange-500 via-orange-400 to-orange-600' :
-          alert.severity === 'MEDIUM' ? 'bg-gradient-to-b from-yellow-500 via-yellow-400 to-yellow-600' : 'bg-slate-500'
+          alert.severity === 'CRITICAL' ? 'bg-linear-to-b from-red-500 via-red-400 to-red-600' :
+          alert.severity === 'HIGH' ? 'bg-linear-to-b from-orange-500 via-orange-400 to-orange-600' :
+          alert.severity === 'MEDIUM' ? 'bg-linear-to-b from-yellow-500 via-yellow-400 to-yellow-600' : 'bg-slate-500'
         }`} />
 
         {/* Critical shimmer overlay */}
         {isCritical && (
-          <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 via-transparent to-red-500/5 animate-pulse pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-r from-red-500/5 via-transparent to-red-500/5 animate-pulse pointer-events-none" />
         )}
 
         <CardContent className="p-4 sm:p-5 flex flex-col gap-3 relative z-10">

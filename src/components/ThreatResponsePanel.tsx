@@ -51,7 +51,7 @@ export function ThreatResponsePanel({ criticalAlert, onMigrate, onPause }: Threa
     >
       <Card className="bg-slate-900/80 border-red-500/30 h-full relative overflow-hidden flex flex-col aegis-threat-flash">
         {/* Animated top bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-400 to-red-600 animate-pulse" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-red-600 via-red-400 to-red-600 animate-pulse" />
         
         {/* Threat glow */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-red-500/10 blur-[50px] rounded-full pointer-events-none" />
