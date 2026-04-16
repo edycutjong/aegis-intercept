@@ -44,3 +44,6 @@ lint.log
 
 # youtube docs media
 docs/youtube
+
+# captured screenshots & B-roll (scripts/capture-*.js output)
+scripts/output/

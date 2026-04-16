@@ -22,9 +22,9 @@ describe('AnimatedBackground Component', () => {
       window.dispatchEvent(new Event('resize'));
     });
 
-    // Advance time to allow the requestAnimationFrame to draw
+    // Advance time greatly to allow the particles to hit the boundaries and wrap around
     act(() => {
-      jest.advanceTimersByTime(100);
+      jest.advanceTimersByTime(100000); // long enough for vx/vy to cross canvas
     });
 
     // We can't strictly assert canvas drawn contents in jsdom easily,

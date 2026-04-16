@@ -8,12 +8,13 @@ jest.mock('next/navigation', () => ({
 }));
 
 // Mock mock-data for coverage of false branch in page.tsx
-import { generateMockBenchmarkHistory } from '@/lib/mock-data';
+import { generateMockBenchmarkHistory, generateMockAlerts } from '@/lib/mock-data';
 jest.mock('@/lib/mock-data', () => {
   const original = jest.requireActual('@/lib/mock-data');
   return {
     ...original,
-    generateMockBenchmarkHistory: jest.fn(original.generateMockBenchmarkHistory)
+    generateMockBenchmarkHistory: jest.fn(original.generateMockBenchmarkHistory),
+    generateMockAlerts: jest.fn(original.generateMockAlerts),
   };
 });
 
@@ -122,6 +123,19 @@ describe('Dashboard (Main Page)', () => {
       jest.advanceTimersByTime(500);
     });
     // Triggers branch line 50 in page.tsx
+    expect(screen.getByText(/Aegis/)).toBeInTheDocument();
+  });
+
+  it('covers zero fallback for averageLatencyAdvantage when no critical alerts and no benchmarks', () => {
+    (generateMockBenchmarkHistory as jest.Mock).mockReturnValueOnce([]);
+    (generateMockAlerts as jest.Mock).mockReturnValueOnce([]);
+    
+    render(<Dashboard />);
+    // Just run enough for mount, but not interval
+    act(() => {
+      jest.advanceTimersByTime(10);
+    });
+    // This will trigger the fallback `|| 0` branch for averageLatencyAdvantage
     expect(screen.getByText(/Aegis/)).toBeInTheDocument();
   });
 });

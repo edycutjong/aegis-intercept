@@ -11,7 +11,10 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "ci": "npm run lint && npm run typecheck && npm run test:coverage"
+    "ci": "npm run lint && npm run typecheck && npm run test:coverage",
+    "capture:screenshots": "node scripts/capture-screenshots.js",
+    "capture:broll": "node scripts/capture-broll.js",
+    "capture:all": "node scripts/capture-screenshots.js && node scripts/capture-broll.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.102.1",
