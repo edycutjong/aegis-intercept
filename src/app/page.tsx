@@ -59,7 +59,8 @@ export default function Dashboard() {
   const totalValueAtRisk = calculateValueAtRisk(alerts);
 
   useEffect(() => {
-    setIsMounted(true);
+    const timer = setTimeout(() => setIsMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Tick generator for demo simulation
