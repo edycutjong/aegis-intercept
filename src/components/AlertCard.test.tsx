@@ -44,14 +44,14 @@ describe('AlertCard', () => {
   });
 
   it('handles unknown alert types and missing hashes', () => {
-    const incompleteAlert: Alert = {
+    const incompleteAlert = {
       id: 'a2',
       severity: 'LOW',
       status: 'UNRESOLVED',
       timestamp: new Date().toISOString(),
       description: 'Test',
       // missing type/alertType, value_usd, target_contract, txHash/tx_hash
-    };
+    } as Alert;
     render(<AlertCard alert={incompleteAlert} />);
     expect(screen.getByText('unknown')).toBeInTheDocument();
     // Empty hash simply returns ''
@@ -59,9 +59,10 @@ describe('AlertCard', () => {
 
   it('renders correctly for resolved alerts', () => {
     const { container } = render(<AlertCard alert={{ ...sampleAlert, status: 'MITIGATED' }} />);
-    // Check for opacity/class change
+    // Check for opacity/class change — Card is inside a motion.div wrapper
     expect(screen.getByText('Whale Alert')).toBeInTheDocument();
-    expect(container.firstChild).toHaveClass('opacity-60');
+    const card = container.querySelector('.opacity-60');
+    expect(card).toBeInTheDocument();
   });
 
   it('renders medium severity', () => {
