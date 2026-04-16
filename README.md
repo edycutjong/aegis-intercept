@@ -23,19 +23,25 @@
 **Command Center** — Real-time SOC dashboard monitoring 4 chains simultaneously. Split-screen benchmark proves Liquify is **30× faster** than standard RPCs, live.
 
 <p align="center">
-  <img src="docs/youtube/01_dashboard_overview.webp" alt="Command Center — live multi-chain monitoring with Liquify latency benchmark" width="720" />
+  <img src="https://github.com/user-attachments/assets/9a4dab02-e2af-4084-9b30-611754b5fc0a" alt="Command Center — live multi-chain monitoring with Liquify latency benchmark" width="720" />
+</p>
+
+**Live Benchmark Close-Up** — Granular latency difference visualization between Liquify Indexer and Standard RPC.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a9fbe505-37d0-4af2-a404-c54bcb15b47e" alt="Live Latency Benchmark Close-Up" width="720" />
 </p>
 
 **Exploit Simulation** — Trigger a flash-loan attack and watch the dashboard light up red in <200ms. Response waterfall shows bridge pause at T+312ms.
 
 <p align="center">
-  <img src="docs/youtube/02_exploit_simulation.webp" alt="Exploit simulation — RED ALERT triggered with sub-200ms detection" width="720" />
+  <img src="https://github.com/user-attachments/assets/117ff6b3-a0d6-4670-b6ee-b9336ea7fb4a" alt="Exploit simulation — RED ALERT triggered with sub-200ms detection" width="720" />
 </p>
 
 **Exploit Replay** — Scrub through the Wormhole hack timeline. Original detection: ~4 hours. Aegis Intercept: **142ms**.
 
 <p align="center">
-  <img src="docs/youtube/03_exploit_replay.webp" alt="Exploit Replay Player — Wormhole hack timeline analysis" width="720" />
+  <img src="https://github.com/user-attachments/assets/fd163e28-cb23-4db4-b063-68d086e38050" alt="Exploit Replay Player — Wormhole hack timeline analysis" width="720" />
 </p>
 
 ---
