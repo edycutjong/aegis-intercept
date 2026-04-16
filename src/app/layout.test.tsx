@@ -6,8 +6,8 @@ describe('RootLayout', () => {
     // Suppress console.error "In HTML, <html> cannot be a child of <div>."
     const originalError = console.error;
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation((...args) => {
-      const msg = args[0];
-      if (typeof msg === 'string' && msg.includes('cannot be a child of <div>')) return;
+      const msg = args.map(String).join(' ');
+      if (msg.includes('cannot be a child of')) return;
       originalError(...args); // fallback
     });
 
