@@ -3,7 +3,7 @@
   <h1>🛡️ Aegis Intercept</h1>
   <p><em>Zero-block cross-chain exploit interceptor — catching bridge hacks in <200ms while standard RPCs are still processing the previous block.</em></p>
 
-  [![Live Demo](https://img.shields.io/badge/🌐_Live-Demo-06b6d4?style=for-the-badge)](https://aegis-intercept.vercel.app)
+  [![Live Demo](https://img.shields.io/badge/🌐_Live-Demo-06b6d4?style=for-the-badge)](https://aegis-intercept.edycu.dev/)
   [![Pitch Video](https://img.shields.io/badge/🎥_Watch-Demo_Video-ef4444?style=for-the-badge)](https://youtu.be/3Rd8JaH7elo)
   [![DoraHacks](https://img.shields.io/badge/🏆_DoraHacks-BUIDL-7c3aed?style=for-the-badge)](https://dorahacks.io/buidl)
 
