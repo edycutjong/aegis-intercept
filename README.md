@@ -4,7 +4,7 @@
   <p><em>Zero-block cross-chain exploit interceptor — catching bridge hacks in <200ms while standard RPCs are still processing the previous block.</em></p>
 
   [![Live Demo](https://img.shields.io/badge/🌐_Live-Demo-06b6d4?style=for-the-badge)](https://aegis-intercept.edycu.dev/)
-  [![Pitch Video](https://img.shields.io/badge/🎥_Watch-Demo_Video-ef4444?style=for-the-badge)](https://youtu.be/3Rd8JaH7elo)
+  [![Pitch Video](https://img.shields.io/badge/🎥_Watch-Demo_Video-ef4444?style=for-the-badge)](https://youtu.be/Ue8tqh3x7yw)
   [![DoraHacks](https://img.shields.io/badge/🏆_DoraHacks-BUIDL-7c3aed?style=for-the-badge)](https://dorahacks.io/buidl)
 
   <br />
@@ -106,6 +106,13 @@ The split-screen benchmark isn't just a feature — it's **marketing collateral*
 ### Prerequisites
 - **Node.js** ≥ 20.9.0
 - **npm** ≥ 10
+
+### Links
+
+- **DoraHacks BUIDL**: [https://dorahacks.io/buidl](https://dorahacks.io/buidl)
+- **GitHub**: `https://github.com/edycutjong/aegis-intercept`
+- **Live Demo**: `https://aegis-intercept.edycu.dev/`
+- **Video Demo**: `https://youtu.be/Ue8tqh3x7yw`
 
 ### Quick Start
 
