@@ -25,6 +25,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Dashboard() {
   const [isDemoActive, setIsDemoActive] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
   
   // Data State — initialize directly with demo data (avoids setState-in-effect cascade)
   const [chains] = useState<Chain[]>(() => generateMockChains());
@@ -35,6 +36,10 @@ export default function Dashboard() {
   const criticalAlert = alerts.find(a => a.severity === 'CRITICAL' && a.status === 'UNRESOLVED') || null;
   const activeThreats = alerts.filter(a => a.status === 'UNRESOLVED').length;
   const totalValueAtRisk = calculateValueAtRisk(alerts);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Tick generator for demo simulation
   useEffect(() => {
@@ -81,6 +86,10 @@ export default function Dashboard() {
     };
     setAlerts(prev => [criticalAttack, ...prev].slice(0, 10));
   };
+
+  if (!isMounted) {
+    return <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30"></div>;
+  }
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30">
