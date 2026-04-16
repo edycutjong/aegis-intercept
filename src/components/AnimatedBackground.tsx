@@ -11,10 +11,8 @@ export function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    const canvas = canvasRef.current!;
+    const ctx = canvas.getContext('2d')!;
 
     let animId: number;
     let particles: Particle[] = [];
@@ -30,13 +28,11 @@ export function AnimatedBackground() {
     }
 
     function resize() {
-      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
 
     function initParticles() {
-      if (!canvas) return;
       particles = [];
       const count = Math.floor((canvas.width * canvas.height) / 25000);
       for (let i = 0; i < Math.min(count, 80); i++) {
@@ -53,7 +49,6 @@ export function AnimatedBackground() {
     }
 
     function draw(time: number) {
-      if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update & draw particles
