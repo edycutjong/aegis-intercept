@@ -9,9 +9,9 @@ jest.mock('recharts', () => {
   return {
     ...OriginalModule,
     ResponsiveContainer: ({ children }: { children: React.ReactNode }) => <div data-testid="responsive-container">{children}</div>,
-    AreaChart: ({ children }: { children: React.ReactNode }) => <div data-testid="area-chart">{children}</div>,
-    Area: () => <div data-testid="area" />,
-    XAxis: () => <div data-testid="xaxis" />,
+    AreaChart: ({ children }: { children: React.ReactNode }) => <svg data-testid="area-chart">{children}</svg>,
+    Area: () => <g data-testid="area" />,
+    XAxis: () => <g data-testid="xaxis" />,
     YAxis: (props: { tickFormatter?: (val: number) => void }) => {
       if (props.tickFormatter) props.tickFormatter(100);
       return <div data-testid="yaxis" />;
