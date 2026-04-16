@@ -134,7 +134,7 @@ export function StatsPanel({ totalSecured, activeThreats, averageLatencyAdvantag
             <Card className="bg-slate-900/80 border-slate-800 aegis-card-hover aegis-brackets relative overflow-hidden group">
               {/* Ambient glow */}
               <div
-                className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                 style={{ backgroundColor: config.glowColor }}
               />
 
