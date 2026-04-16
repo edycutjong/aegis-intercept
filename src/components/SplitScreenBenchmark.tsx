@@ -76,7 +76,7 @@ export function SplitScreenBenchmark({ benchmarks }: SplitScreenBenchmarkProps) 
               <div className="absolute inset-0 bg-linear-to-b from-cyan-500/5 via-transparent to-blue-500/5 pointer-events-none" />
               
               {/* Subtle grid */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[length:20px_20px] pointer-events-none" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-size-[20px_20px] pointer-events-none" />
 
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
