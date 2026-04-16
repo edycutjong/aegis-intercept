@@ -43,12 +43,14 @@ describe('Dashboard (Main Page)', () => {
 
   it('renders standard loading skeletons initially', () => {
     render(<Dashboard />);
+    act(() => { jest.advanceTimersByTime(10); });
     // Since everything is loading, we expect to see skeletons
     expect(screen.getAllByText(/Aegis/i)[0]).toBeInTheDocument();
   });
 
   it('navigates to replay page on button click', () => {
     render(<Dashboard />);
+    act(() => { jest.advanceTimersByTime(10); });
     const replayLink = screen.getByText(/Exploit Replay/i, { selector: 'button' });
     fireEvent.click(replayLink);
     // Since it's wrapped in a <Link>, next/link doesn't use router.push in tests out of the box unless mocked properly with next-router-mock.
@@ -71,6 +73,7 @@ describe('Dashboard (Main Page)', () => {
 
   it('triggers simulation and handles response actions', () => {
     render(<Dashboard />);
+    act(() => { jest.advanceTimersByTime(10); });
     
     const simButton = screen.getByText(/Simulate Exploit/i);
     fireEvent.click(simButton);
@@ -95,20 +98,21 @@ describe('Dashboard (Main Page)', () => {
 
   it('toggles pause and resume demo', () => {
     render(<Dashboard />);
+    act(() => { jest.advanceTimersByTime(10); });
     
-    expect(screen.getByText(/Pause Demo/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Pause' })).toBeInTheDocument();
     
     // Click pause
-    fireEvent.click(screen.getByRole('button', { name: /Pause Demo/i }));
+    fireEvent.click(screen.getByRole('button', { name: 'Pause' }));
     
-    // Should change to Resume Demo
-    expect(screen.getByText(/Resume Demo/i)).toBeInTheDocument();
+    // Should change to Resume
+    expect(screen.getByRole('button', { name: 'Resume' })).toBeInTheDocument();
     
     // Click it again to resume
-    fireEvent.click(screen.getByRole('button', { name: /Resume Demo/i }));
+    fireEvent.click(screen.getByRole('button', { name: 'Resume' }));
     
-    // Should be back to Pause Demo
-    expect(screen.getByText(/Pause Demo/i)).toBeInTheDocument();
+    // Should be back to Pause
+    expect(screen.getByRole('button', { name: 'Pause' })).toBeInTheDocument();
   });
 
   it('covers benchmark length branch when elements < MAX_BENCHMARK_HISTORY', () => {

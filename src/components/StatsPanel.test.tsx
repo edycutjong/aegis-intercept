@@ -22,7 +22,7 @@ describe('StatsPanel', () => {
 
     // Avg Advantage — Math.round(42.5) = 43
     expect(screen.getByText('Avg Advantage')).toBeInTheDocument();
-    expect(screen.getByText(/43ms/)).toBeInTheDocument();
+    expect(screen.getByText('43')).toBeInTheDocument();
 
     // System Uptime
     expect(screen.getByText('System Uptime')).toBeInTheDocument();
