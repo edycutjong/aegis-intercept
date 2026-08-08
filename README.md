@@ -179,4 +179,5 @@ npm run dev
 
 ## 📄 License
 
-MIT © 2026 [Edy Cu](https://github.com/edycutjong)
+This project is licensed under the [MIT License](LICENSE) — see the LICENSE file for details.
+
